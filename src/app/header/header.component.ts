@@ -7,9 +7,5 @@ import { Component, EventEmitter, Output } from "@angular/core";
 })
 
 export class HeaderComponent {
-  @Output() selectedPage = new EventEmitter<string>();
 
-  onSelect (pageName: string) {
-    this.selectedPage.emit(pageName);
-  }
 }
