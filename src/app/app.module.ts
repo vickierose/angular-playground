@@ -16,12 +16,15 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipesService } from './recipes/recipes.sevice';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { NoRecipeSelectedComponent } from './recipes/no-recipe-selected/no-recipe-selected.component';
+import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
 
 const appRoutes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},
   {path: 'recipes', component: RecipesComponent, children: [
     {path: '', component: NoRecipeSelectedComponent, pathMatch: 'full'},
-    {path: ':id', component: RecipeDetailComponent}
+    {path: 'new', component: RecipesEditComponent},
+    {path: ':id', component: RecipeDetailComponent},
+    {path: ':id/edit', component: RecipesEditComponent}
   ]},
   {path: 'shopping', component: ShoppingListComponent}
 ];
@@ -36,7 +39,8 @@ const appRoutes = [
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    RecipesEditComponent
   ],
   imports: [
     BrowserModule,
